@@ -1,1 +1,1 @@
-Created app shop application with React useContext React-Router-Dom and Tailwind 
+develop: create Routes and install packages
