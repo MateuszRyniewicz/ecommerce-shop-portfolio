@@ -1,2 +1,1 @@
-ESP-2: create Home page
-ESP-2: create product component and style
+ESP-3: create sidebar context and sidebar close/open plus style
