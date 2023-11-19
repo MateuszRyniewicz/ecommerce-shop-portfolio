@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { IoMdAdd, IoMdClose, IoMdRemove } from 'react-icons/io';
+
+import { CartContext } from '../contexts/CartContext';
+
 const CartItem = ({ item }) => {
+	const { removeToCart } = useContext(CartContext);
 	console.log(item);
 	const { id, title, price, image, amount } = item;
 	return (
@@ -17,7 +21,9 @@ const CartItem = ({ item }) => {
 							className='text-[13px] uppercase font-semibold max-w-[200px] text-primary hover:underline'>
 							{title}
 						</Link>
-						<div className='text-xl cursor-pointer'>
+						<div
+							className='text-xl cursor-pointer'
+							onClick={() => removeToCart(id)}>
 							<IoMdClose className='text-gray-500 hover:text-red-500 transition' />
 						</div>
 					</div>

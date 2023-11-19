@@ -11,10 +11,10 @@ import { CartContext } from '../contexts/CartContext';
 
 const Sidebar = () => {
 	const { isOpen, handleClose } = useContext(SidebarContext);
-	const { cart } = useContext(CartContext);
+	const { cart, clearCart } = useContext(CartContext);
 
 	return (
-		<header
+		<div
 			className={`${
 				isOpen ? 'right-0 ' : '-right-full '
 			}w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]`}>
@@ -31,7 +31,19 @@ const Sidebar = () => {
 					return <CartItem item={item} key={item.id}></CartItem>;
 				})}
 			</div>
-		</header>
+			<div>
+				<div className='bg-pink-500 flex items-center justify-between'>
+					<div>
+						<span>Total</span>$ 1000
+					</div>
+					<div
+						onClick={() => clearCart()}
+						className='cursor-pointer py-4 bg-red-500 text-white w-10 h-10 flex justify-center items-center'>
+						<FiTrash2 />
+					</div>
+				</div>
+			</div>
+		</div>
 	);
 };
 

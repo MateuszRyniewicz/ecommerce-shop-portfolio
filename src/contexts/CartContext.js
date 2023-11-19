@@ -27,8 +27,20 @@ const CartProvider = ({ children }) => {
 		}
 	};
 
+	const removeToCart = (id) => {
+		const item = cart.filter((item) => {
+			return item.id !== id;
+		});
+
+		setCart(item);
+	};
+
+	const clearCart = () => {
+		setCart([]);
+	};
+
 	return (
-		<CartContext.Provider value={{ addToCart, cart }}>
+		<CartContext.Provider value={{ clearCart, removeToCart, addToCart, cart }}>
 			{children}
 		</CartContext.Provider>
 	);
