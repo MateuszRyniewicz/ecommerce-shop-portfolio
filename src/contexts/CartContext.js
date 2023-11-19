@@ -39,8 +39,41 @@ const CartProvider = ({ children }) => {
 		setCart([]);
 	};
 
+	const increaseAmount = (id) => {
+		const cartItem = cart.find((item) => item.id === id);
+
+		addToCart(id, cartItem);
+	};
+
+	const decreaseAmount = (id) => {
+		const cartItem = cart.find((item) => {
+			return item.id === id;
+		});
+		if (cartItem) {
+			const newCart = cart.map((item) => {
+				if (item.id === id) {
+					return { ...item, amount: cartItem.amount - 1 };
+				} else {
+					return item;
+				}
+			});
+
+			setCart(newCart);
+		}
+		if (cartItem.amount < 2) {
+			removeToCart(id);
+		}
+	};
 	return (
-		<CartContext.Provider value={{ clearCart, removeToCart, addToCart, cart }}>
+		<CartContext.Provider
+			value={{
+				decreaseAmount,
+				increaseAmount,
+				clearCart,
+				removeToCart,
+				addToCart,
+				cart,
+			}}>
 			{children}
 		</CartContext.Provider>
 	);

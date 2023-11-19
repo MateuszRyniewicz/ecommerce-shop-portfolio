@@ -31,10 +31,10 @@ const Sidebar = () => {
 					return <CartItem item={item} key={item.id}></CartItem>;
 				})}
 			</div>
-			<div>
-				<div className='bg-pink-500 flex items-center justify-between'>
-					<div>
-						<span>Total</span>$ 1000
+			<div className='flex flex-col gap-y-2 py-1 mt-2'>
+				<div className='flex items-center justify-between'>
+					<div className='uppercase font-semibold text-sm'>
+						<span className='mr-2'>Total</span>$ 1000
 					</div>
 					<div
 						onClick={() => clearCart()}
