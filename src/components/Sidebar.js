@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+
 import { Link } from 'react-router-dom';
 
 import { IoMdArrowForward } from 'react-icons/io';
@@ -10,6 +11,7 @@ import { SidebarContext } from '../contexts/SidebarContext';
 import { CartContext } from '../contexts/CartContext';
 
 const Sidebar = () => {
+	
 	const { isOpen, handleClose } = useContext(SidebarContext);
 	const { total, cart, clearCart } = useContext(CartContext);
 

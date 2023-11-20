@@ -10,6 +10,7 @@ const SidebarProvider = ({ children }) => {
 	};
 
 	return (
+		
 		<SidebarContext.Provider value={{ isOpen, setIsOpen, handleClose }}>
 			{children}
 		</SidebarContext.Provider>

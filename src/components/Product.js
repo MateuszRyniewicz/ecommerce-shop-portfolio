@@ -1,16 +1,19 @@
 import React, { useContext } from 'react';
 
-import { BsPlus, BsEyeFill } from 'react-icons/bs';
-
 import { Link } from 'react-router-dom';
+
+import { BsPlus, BsEyeFill } from 'react-icons/bs';
 
 import { CartContext } from '../contexts/CartContext';
 
 const Product = ({ product }) => {
+
 	const { id, image, price, title, category } = product;
 
 	const { addToCart } = useContext(CartContext);
+
 	return (
+
 		<div>
 			<div className='border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition'>
 				<div className='w-full h-full flex justify-center items-center'>

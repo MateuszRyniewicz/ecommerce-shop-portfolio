@@ -1,23 +1,30 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { SidebarContext } from '../contexts/SidebarContext';
-import { CartContext } from '../contexts/CartContext';
+
+import { Link } from 'react-router-dom';
 
 import { BsBag } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
 
 import Logo from '../img/logo.svg';
 
+import { SidebarContext } from '../contexts/SidebarContext';
+import { CartContext } from '../contexts/CartContext';
+
 const Header = () => {
+
 	const [isActive, setIsActive] = useState(true);
-	const { isOpen, setIsOpen, handleClose } = useContext(SidebarContext);
+
 	const { itemAmount } = useContext(CartContext);
+	const { isOpen, setIsOpen } = useContext(SidebarContext);
 
 	useEffect(() => {
+
 		window.addEventListener('scroll', () => {
 			window.scrollY > 5 ? setIsActive(true) : setIsActive(false);
 		});
 	}, []);
+
 	return (
+
 		<header
 			className={`${isActive ? 'bg-white py-4 shadow-md' : 'bg-none py-6'} fixed w-full z-10 transition-all`}>
 			<div className='container mx-auto flex items-center justify-between h-full'>

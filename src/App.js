@@ -6,8 +6,11 @@ import Sidebar from './components/Sidebar';
 
 import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
+
 const App = () => {
+
 	return (
+		
 		<div className='overflow-hidden'>
 			<Router>
 				<Header />

@@ -83,7 +83,9 @@ const CartProvider = ({ children }) => {
 			removeToCart(id);
 		}
 	};
+
 	return (
+		
 		<CartContext.Provider
 			value={{
 				decreaseAmount,

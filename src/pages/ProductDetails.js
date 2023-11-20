@@ -9,7 +9,7 @@ const ProductDetails = () => {
 	const { id } = useParams();
 	const { addToCart } = useContext(CartContext);
 	const { products } = useContext(ProductContext);
-
+	
 	const product = products.find((product) => {
 		return product.id === Number(id);
 	});
@@ -21,10 +21,11 @@ const ProductDetails = () => {
 			</section>
 		);
 	}
-
+	
 	const { title, price, description, image } = product;
-
+	
 	return (
+
 		<section className='pt-32 pb-12 lg:py-32 h-screen'>
 			<div className='container mx-auto'>
 				<div className='flex flex-col lg:flex-row items-center'>

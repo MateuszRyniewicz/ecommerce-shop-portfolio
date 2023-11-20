@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
+
 import axios from 'axios';
 
 export const ProductContext = createContext();
@@ -17,7 +18,9 @@ const ProductProvider = ({ children }) => {
 		};
 		getApi();
 	}, []);
+	
 	return (
+
 		<ProductContext.Provider value={{ products }}>
 			{children}
 		</ProductContext.Provider>
