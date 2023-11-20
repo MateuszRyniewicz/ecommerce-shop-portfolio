@@ -26,6 +26,6 @@
 - create function total price
 
 6. ESP-5
--create hero section
+- create hero section
 - create footer
 - create card page
