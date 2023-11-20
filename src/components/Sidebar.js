@@ -28,7 +28,7 @@ const Sidebar = () => {
 					<IoMdArrowForward className='text-2xl' />
 				</div>
 			</div>
-			<div className='flex flex-col gap-y-2 h-[520px] lg:h-[600px] overflow-y-auto overflow-x-hidden border-b'>
+			<div className='flex flex-col gap-y-2 h-[520px] lg:h-[490px] overflow-y-auto overflow-x-hidden border-b'>
 				{cart.map((item) => {
 					return <CartItem item={item} key={item.id}></CartItem>;
 				})}
@@ -44,6 +44,16 @@ const Sidebar = () => {
 						<FiTrash2 />
 					</div>
 				</div>
+				<Link
+					to='/'
+					className='bg-gray-200 flex p-4 justify-center items-center text-primary w-full font-medium'>
+					View cart
+				</Link>
+				<Link
+					to='/'
+					className='bg-primary flex p-4 justify-center items-center w-full text-white font-medoum'>
+					Checkout
+				</Link>
 			</div>
 		</div>
 	);
