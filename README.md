@@ -1,3 +1,4 @@
+UseContext (React, App Router) + TailwindCSS ==> Shop Page
 
 
 ESP-2: create Home page
