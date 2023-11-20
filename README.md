@@ -1,6 +1,6 @@
 UseContext (React, App Router) + TailwindCSS ==> Shop Page
 
-##  Banches
+### A Banches
 ESP-2: create Home page.
 ESP-2: create product component and style.
 
